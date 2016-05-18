@@ -1,0 +1,21 @@
+<html><body>
+<h3>Conversion Decimal to Hex</h3>
+<script language="JavaScript">
+  function Hex(x) {
+    hex = Array("0","1","2","3","4","5","6","7",
+      "8","9","A","B","C","D","E","F"); // 0~15
+    hxv = "";
+    origin = x;
+    while (x > 0) {
+      x1 = x % 16; // x1 = 8 , 15 , 15 , 7
+      hxv = hex[x1] + hxv; // 8 , 15(F) , 15(F) , 7 => 7FF8
+      x = parseInt(x / 16); // x = 2047 , 127 , 7 , 0
+      document.write("<b>"+x+"</b><br>");
+      document.write("<i>hxv : "+hxv+"</i><br>");
+    }
+    document.write("<br><b>",origin,"</b> in hex:");
+      document.write(hxv+"</b>");
+  }
+  Hex(32760);
+</script>
+</body></html>

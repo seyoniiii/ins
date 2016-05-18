@@ -1,0 +1,17 @@
+<html><body>
+<h3>Conversion Decimal to Hex</h3>
+<script language="JavaScript">
+  function Hex(x) {
+    hex = Array("0","1","2","3","4","5","6","7",
+      "8","9","A","B","C","D","E","F"); // 0~15
+    document.write("<b>",x,"</b> in hex: <b>");
+    x1 = parseInt(x / 256); // x1 = 15(F) , 1
+    x = x % 256; // x = 255
+    x2 = parseInt( x / 16); // x2 = 15(F) , 0
+    x3 = x % 16; // 나머지 x3 = 15(F) , 1
+    document.write(hex[x1], hex[x2], hex[x3]+"</b><br>");
+  }
+  Hex(4095);//16x16x16
+  Hex(257);
+</script>
+</body></html>

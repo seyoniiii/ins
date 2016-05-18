@@ -1,0 +1,23 @@
+<html><body>
+<h3>Conversion Decimal to Hex</h3>
+<script language="JavaScript">
+  function Hex(x) {
+    hex = Array("0","1","2","3","4","5","6",
+                "7","8","9","A","B","C","D",
+                "E","F","G","H","I","J","K",
+                "L","M","N","O","P","Q","R",
+                "S","T","U","V","W","X","Y","Z"); //0~35
+    hxv = "";
+    document.write("<b>",x,"</b> in hex: <b>");
+
+    while (x > 0) {
+      x1 = x % 36; // 0 , 10 , 25
+      hxv = hex[x1] + hxv; // 0 , 10(A) ,25(P) => PA0
+      x = parseInt(x / 36); //910 , 25 , 0
+//      document.write(x+", "+hxv+"</b><br>");
+    }
+    document.write(hxv+"</b><br>");
+  }
+  Hex(32760);
+</script>
+</body></html>

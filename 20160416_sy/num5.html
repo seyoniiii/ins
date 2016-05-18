@@ -1,0 +1,16 @@
+<html><body>
+<h4>Test</h4>
+<script language="JavaScript">
+function calc(){
+  a = document.nform.ex.value;
+  b = eval(a);
+   // document.nform.ans.value = b; (이거 쓸거면<input type="text" name="ans"> )
+  document.getElementById("ans").innerHTML ="<b><font color=red>"+b;
+}
+</script>
+<form name = "nform">
+  수식 : <input type="text" name="ex" value="5*7">
+  <input type ="button" onClick="calc()" value="answer">
+  계산값 : <span id="ans"> Answer </span>
+  <!-- 계산값 : <input type="text" name="ans"> -->
+</form>

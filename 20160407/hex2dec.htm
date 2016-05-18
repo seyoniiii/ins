@@ -1,0 +1,38 @@
+<html><head>
+<title>Hexa Code Conversion</title>
+<script language="JavaScript">
+  function Dec() {
+    hex = Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F")
+    var hxv = ""
+    x = document.conv.xv.value;
+    document.conv.answer1.value = parseInt(x,16).toString(10);
+    xl = x.length;
+    hxv = 0; h = 1; i = 0;
+    hxv3 = 0;
+//document.write("x="+x+", xl="+xl+"<br>");
+    while ( i < xl ) {
+      for(j=0; j<16; j++) { if(hex[j]==x.charAt(xl-i-1)) break; }
+      hxv += h * j;
+//document.write(i,": j=",j,", h=", h, ", hxv=",hxv,"<br>");
+      hxv3 += h * (x.charCodeAt(xl-i-1)-55);
+      h *= 16;
+      i++;
+    }
+    document.conv.answer2.value = hxv;
+    document.conv.answer3.value = hxv3;
+  }
+</script>
+</head>
+<body>
+  <h4>Dec Code Conversion</h4>
+
+  <form name="conv">
+     Type a hexa number:
+     <input type="text" name="xv" value="ABCD">
+     <input type="button" value="answer" onClick="Dec()"><br>
+     Answer in Dec 1: <input type="text" name="answer1"  style="color:#ff0000;"><br>
+     Answer in Dec 2: <input type="text" name="answer2"  style="color:#00ff00; font-weight:bold;"><br>
+     Answer in Dec 3: <input type="text" name="answer3"  style="color:#0000ff; font-weight:bolder;"><br>
+  </form>
+</body>
+</html>

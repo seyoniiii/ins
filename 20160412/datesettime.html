@@ -1,0 +1,16 @@
+<html><head><title>Date</title></head>
+<body><h3>Date Set Test</h3>
+<script language="JavaScript">
+  var d = new Date();
+  d.setTime(0);
+  document.write(d.getYear(),"년, ",(d.getMonth()+1),"월 ",d.getDate(),"일<br>");
+  d.setTime(1000*3600*24*366);
+  document.write(d.getYear(),"년 ",(d.getMonth()+1),"월 ",d.getDate(),"일<br>");
+</script>
+</body></html>
+
+출력:
+Date Set Test
+
+70년, 1월 1일
+71년, 1월 2일

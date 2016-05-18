@@ -1,0 +1,26 @@
+<html><head></head><body>
+  <table border=1><tr>
+    <script language="JavaScript">
+    wkd = new Array("일","월","화","수","목","금","토");
+    var mdays = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+    today = new Date();
+    document.write(today);
+    d = today.getDate();
+    m = today.getMonth();
+    w = today.getDay();
+    for (var i = 0; i < 7; i++) {
+        document.write("<td>");
+        document.write(wkd[i]);
+        document.write("</td>");
+    }
+    document.write("</tr><tr>");
+    for (var j = 0; j < 7; j++) {
+        document.write("<td>");
+        document.write(mdays[m]-j);
+        document.write("</td>");
+    }
+
+
+    </script>
+  </tr></table>
+</body></html>

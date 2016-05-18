@@ -1,0 +1,73 @@
+<meta http-equiv=content-type content="text/html; charset=UTF-8">
+<html><head><title>Assignment4_2012301058_이세연</title></head>
+<form>
+  2012301058 이세연
+  <input type="button" value="학교에서 집가기" onclick="route();">
+</form>
+<script language="JavaScript">
+  function SchoolToStation(left) {
+    bus.style.left = 600;
+    bus.style.top = 80+left++;
+    if(left>180) return 0;
+    else { var cmd="SchoolToStation("+left+")"; window.setTimeout(cmd,10); }
+  } // 서경대학교 ~ 성신여대입구
+  function StationMove_1(y) {
+    subway.style.left = 640-y++;
+    subway.style.top = 270+y++;
+    if(y>70) return 0;
+    else { var cmd="StationMove_1("+y+")"; window.setTimeout(cmd,30); }
+  }// 성신여대입구역 ~ 녹번역 1
+  function StationMove_2(y) {
+    subway.style.left = 570;
+    subway.style.top = 340+y++;
+    if(y>200) return 0;
+    else { var cmd="StationMove_2("+y+")"; window.setTimeout(cmd,10); }
+  }// 성신여대입구역 ~ 녹번역 2
+  function StationMove_3(y) {
+    subway.style.left = 570-y++;
+    subway.style.top = 540-y++/3;
+    if(y>290) return 0;
+    else { var cmd="StationMove_3("+y+")"; window.setTimeout(cmd,20); }
+  }// 성신여대입구역 ~ 녹번역 3
+  function StationMove_4(y) {
+    subway.style.left = 280-y++;
+    subway.style.top = 440-y++;
+    if(y>200) return 0;
+    else { var cmd="StationMove_4("+y+")"; window.setTimeout(cmd,30); }
+  }// 성신여대입구역 ~ 녹번역 3
+  function walk(a) {
+    person.style.left = 100;
+    person.style.top = 220-a++;
+    if(a>70) return 0;
+    else { var cmd="walk("+a+")"; window.setTimeout(cmd,20); }
+  } //녹번역 ~ 집
+  function route() {
+    setTimeout("SchoolToStation(10)",0);
+    setTimeout("StationMove_1(10)",2100);
+    setTimeout("StationMove_2(10)",3400);
+    setTimeout("StationMove_3(10)",5800);
+    setTimeout("StationMove_4(10)",9300);
+    setTimeout("walk(10)",12500);
+
+  }
+</script>
+</head>
+<body>
+<img src="s2012301058a4_map.png" width="800" height="600">
+
+<div id="bus" style="position:absolute; top:80; left:600;">
+  <img src="s2012301058a4_bus.png" width="50" height="50">
+</div>
+<div id="subway" style="position:absolute; top:270; left:640;">
+  <img src="s2012301058a4_subway.png" width="50" height="50">
+</div>
+<div id="person" style="position:absolute; top:180; left:100;">
+  <img src="s2012301058a4_person.png" width="50" height="50">
+</div>
+<div id="house" style="position:absolute; top:120; left:100;">
+  <img src="s2012301058a4_house.png" width="50" height="50">
+</div>
+<div id="school" style="position:absolute; top:90; left:650;">
+  <img src="s2012301058a4_school.png" width="50" height="50">
+</div>
+</body></html>

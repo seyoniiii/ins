@@ -1,0 +1,22 @@
+<html><head>
+<script language="JavaScript">
+
+function test(x){
+var fac=1;
+x1=x.charCodeAt(0);
+x1=x1%16;
+
+for(i=1;i<=x1;i++){ fac *=i;}
+document.write(fac);
+}
+
+</script>
+</head>
+<body>
+<script>
+x=prompt("문자를 입력하세요 : ");
+test(x);
+
+</script>
+</body>
+</html>

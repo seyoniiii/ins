@@ -1,0 +1,33 @@
+﻿<meta http-equiv=content-type content="text/html; charset=UTF-8">
+<html><head><title>레이어의 위치 이동</title></head>
+<script language="JavaScript">
+  function layer1(left) {
+    car.left = left;
+    car.top = 2*left++/3;
+    if(left>40) return 0;
+    else { var cmd="layer1("+left+")"; window.setTimeout(cmd,100); }
+  } // 압구정역
+  function layer2() { car.left = 185; car.top = 70; } // 압구정로
+  function layer3() { car.left = 100; car.top = 200 } // 선릉로
+  function layer4() { car.left = 270; car.top = 230 } // 선릉로
+  function hidenshow() {                     // bus hide and show
+    if(car.display=='none') car.display='block';
+    else car.display='none';
+  }
+  function first() { car=bus.style; }    // 객체 id "bus"를 car로 지정
+</script>
+</head>
+
+<body onload="first()">
+<img src="map.png" width="307" height="247">
+<div id="bus" style="position:absolute; top:0; left:0;">
+  <img src="bus.png" width="50" height="50">
+</div>
+<form>
+  <input type="button" value="압구정역" onclick="layer1(1);">
+  <input type="button" value="압구정로" onclick="layer2();">
+  <input type="button" value="선릉로" onclick="layer3();">
+  <input type="button" value="청담동" onclick="layer4();"><br>
+  <input type="button" value="버스 hide/show" onclick="hidenshow();">
+</form>
+</body></html>

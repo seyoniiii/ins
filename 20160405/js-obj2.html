@@ -1,0 +1,25 @@
+<html><head><title>UserObject</title>
+<script language="JavaScript">
+  function info() { // method
+    document.writeln("<b>학생 정보 : 이름은 "+this.name+", 학과는 "+this.dept+"</b>");
+    return "";
+  }
+  function student(identity, name, department){
+    this.id = identity;
+    this.name = name;
+    this.dept = department;
+
+    this.stInfo = info;  // not info();
+  }
+  st1 = new student("2013301000", "석영대", "컴퓨터과학과");
+</script>
+</head>
+<body> <h3>User Object 2</h3>
+  <script type="text/javascript">
+     document.writeln("학번: " + st1.id + "<br>");
+     document.writeln(st1.stInfo() + "<br>");  // not st1.stInfo, output return value of info()
+
+     st2 = new student("2013******", "서경대", "컴퓨터과학과");
+     st2.stInfo();
+  </script>
+</body></html>

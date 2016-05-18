@@ -1,0 +1,20 @@
+<html><head><title>UserObject</title>
+<script language="JavaScript">
+  function student(identity, name, department){
+    this.id = identity;
+    this.name = name;
+    this.dept = department;
+
+    this.stInfo = function() {
+      return "학생 정보 : 이름은 "+this.name+", 학과는 "+this.dept;
+    };
+  }
+  st = new student("2013301000", "석영대", "컴퓨터과학과");
+</script>
+</head>
+<body> <h3>User Object 1</h3>
+  <script type="text/javascript">
+     document.writeln("학번: " + st.id + "<br>");
+     document.writeln(st.stInfo() + "<br>");
+  </script>
+</body></html>

@@ -1,0 +1,26 @@
+<script>
+  document.write("Hello 1 !<br>");  document.write("Hello 2 !<br>")
+  document.write("Hello 3 !<br>")
+
+function dd(s) {
+  document.write(s+"<br>");
+}
+function ddw(s) {
+  d.write(s+"<br>");
+}
+  dd("1. 서경대학교");
+  d = document;
+  d.write("2. 서경대학교 컴퓨터과학과<br>");
+  dw = d.write;
+  dw("3. 서경대학교 컴퓨터과학과 인터넷보안<br>");
+  ddw("4. 컴퓨터과학과 인터넷보안<br>");
+</script>
+<!-- Output
+Hello 1 !
+Hello 2 !
+Hello 3 !
+1. 서경대학교
+2. 서경대학교 컴퓨터과학과
+3. 서경대학교 컴퓨터과학과 인터넷보안  <== IE.11, not on Chrome
+4. 컴퓨터과학과 인터넷보안  <== IE.11, not on Chrome
+-->

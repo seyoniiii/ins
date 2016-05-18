@@ -1,0 +1,20 @@
+<html><head><title>UserObject</title>
+<script language="JavaScript"> // Error, unfinished!!!!
+  function Hex(x) { 
+    hex = Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F") 
+    var hxv = "" 
+    while ( x > 0 ) { 
+      x1 = x % 16 
+      hxv = hex[x1] + hxv 
+      x =  parseInt(x/16) 
+    } 
+    document.getElementById("ans").innerHTML = hxv;
+  }
+</script>
+</head>
+<body> <h3>User Object 3</h3>
+  <script type="text/javascript">
+    h = new Hex(20133);
+  </script>
+  <div id="ans"> Answer </div>
+</body></html>

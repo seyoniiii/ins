@@ -1,0 +1,80 @@
+<html><body>
+<h3>Seyeon's Factorial Algorithm</h3>
+<script language="JavaScript">
+    function Hex(n) { //10진수로 변환하는 함수
+    hex = Array("0","1","2","3","4","5","6",
+                "7","8","9","A","B","C","D",
+                "E","F","G","H","I","J","K",
+                "L","M","N","O","P","Q","R",
+                "S","T","U","V","W","X","Y","Z"); //0~35
+    var n;
+    len = n.length; //입력받은 16진수의 길이
+    sum = 0;//결과(10진수)
+    r=1;// 배수
+    for ( i =len-1; i >=0; i--) {
+        for (j = 0; j < 36; j++) {
+            if (n.charAt(i)==hex[j]){
+                sum += r * j;
+              }
+          }
+          r=r<<1;//비트연산자
+        }
+    hxv = "";
+    while (sum > 0) {
+      x1 = sum % 2;
+      hxv = hex[x1] + hxv;
+      sum = parseInt(sum / 2);
+    }
+    return hxv;
+    }
+
+    function Cut(x) { //2진수 하위4비트만 자르기
+      hxv_2 = ""
+      hxv_len = hxv.length;
+      if (hxv_len<5) {
+        document.write("하위4비트 : "+"<b>"+hxv+"</b>"+"<br>");
+        return Bin(hxv);
+      }
+      else if (hxv_len>4) {
+        for (i = hxv_len-4; i <hxv_len; i++) {
+          hxv_2 += hxv[i];
+        }
+        document.write("하위4비트 : "+"<b>"+hxv_2+"</b>"+"<br>");
+        return Bin(hxv_2);
+      }
+    }
+
+    function Bin(n) { //2진수 -> 10진수
+      var hex = Array("0","1"); //0~1
+      var n;
+      var len = n.length; //입력받은 16진수의 길이
+      sum_2 = 0;//결과(10진수)
+      var r=1;// 배수
+      for ( i =len-1; i >=0; i--) {
+          for (j = 0; j < 2; j++) {
+              if (n.charAt(i)==hex[j]){
+                  sum_2 += r * j;
+                }
+            }
+            r=r<<1;//비트연산자
+          }
+      return sum_2;
+      document.write("sum_2 "+sum_2+"<br>");
+      }
+
+  function Fact(n) {//팩토리얼 뽑아내는 함수
+        if(n>1)
+          return n*Fact(n-1);
+        else
+          return n;
+    }
+
+    x = prompt("Type base value!","A");//창띄우기
+    document.write("입력받은 문자 : <b>",x,"</b>"+" "+"<br>");
+    Hex(x);
+    document.write("2진수로 변환 : <b>",Hex(x),"</b>"+" "+"<br>");
+    Cut(hxv);
+    Fact(sum_2);
+    document.write("팩토리얼 결과 : <b>",Fact(sum_2),"</b>"+" ");
+</script>
+</body></html>

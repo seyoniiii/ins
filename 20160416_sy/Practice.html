@@ -1,0 +1,37 @@
+<html><body>
+  <script language = "JavaScript">
+    function Calc(){
+      wkday = new Array("일","월","화","수","목","금","토");
+      today = new Date();
+      input = new Date();
+      inyear=document.nform.innyear.value;
+      inmonth = document.nform.innmonth.value;
+      indate = document.nform.inndate.value;
+      if(inyear>1900) inyear -= 1900;
+      input.setYear(inyear);
+      input.setMonth(inmonth);
+      input.setDate(indate);
+      inday = wkday[input.getDay()];
+      t = parseInt(today.getTime());
+      i = parseInt(input.getTime());
+      result = parseInt((t-i)/(1000*3600*24));
+      document.getElementById("ainyear").innerHTML = "<b><font color = red>"+(1900+inyear);
+      document.getElementById("ainmonth").innerHTML = "<b><font color = red>"+(inmonth);
+      document.getElementById("aindate").innerHTML = "<b><font color = red>"+indate;
+      document.getElementById("ainday").innerHTML = "<b><font color = red>"+inday;
+      document.getElementById("how").innerHTML = "<b><font color = red>"+result;
+  }
+  </script>
+<form name = "nform">
+   입력 : <input type="text" name = "innyear" value = 2016 size=5>년
+   <input type="text" name = "innmonth" value = 4 size=3>월
+   <input type="text" name = "inndate" value = 19 size=3>일
+    <input type="button" OnClick ="Calc()" value="제출">
+  <p>
+    <span id = "ainyear">1970</span>년
+    <span id = "ainmonth"> 1</span>월
+    <span id = "aindate"> 1</span>일은
+    <span id = "ainday"> 목</span>요일 입니다.<br>
+    오늘까지 <span id = "how">15803</span>일 지났습니다.
+  </form>
+</body></html>

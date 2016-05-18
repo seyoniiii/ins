@@ -1,0 +1,29 @@
+<html><body>
+<h3>Conversion Decimal to Hex</h3>
+<script language="JavaScript">
+  function Hex() {
+    hex = Array("0","1","2","3","4","5","6",
+                "7","8","9","A","B","C","D",
+                "E","F","G","H","I","J","K",
+                "L","M","N","O","P","Q","R",
+                "S","T","U","V","W","X","Y","Z"); //0~35
+    hxv = "";
+    x = document.conv.num.value;
+    base = document.conv.ba.value;
+    while (x > 0) {
+      x1 = x % base;
+      hxv = hex[x1] + hxv;
+      x = parseInt(x / base);
+    }
+    //(document.conv.out.value = hxv; 이거 쓸거면 Converted Value: <input type=text name="out”>)
+    document.getElementById("out").innerHTML ="<b><font color=red>"+hxv;
+  }
+</script>
+
+ <form name="conv">
+   Number: <input type=text name="num" value=32760>
+   Base : <input type=text name="ba" value=16><br>
+   <input type="button" onClick="Hex()" value="Submit">
+   Converted Value: <span id="out"> answer </span>
+ </form>
+</body></html>

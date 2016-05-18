@@ -1,0 +1,31 @@
+<html><head><title>quiz3</title></head>
+<body><h3>Date Set Test</h3>
+<script language="JavaScript">
+
+  wkday = new Array("일","월","화","수","목","금","토");
+  document.write("학번 : 2012301058<br>");
+  document.write("이름: 이세연<br>");
+
+  var b_y = 1994;
+  var b_m = 02;
+  var b_d = 26;
+  var b_date = "토";
+  document.write("생일: "+b_y+"년" +b_m+"월 "+b_d+"일"+b_date+"요일<br>");
+  document.write("10,000일 후: ++oooo년 o월 o일 o요일<br>");
+  document.write("<br>");
+  var d = new Date();
+  d.setTime(62925854400+5259600+2246400);
+  document.write(d.getYear(),"년, ",(d.getMonth()+1),"월 ",d.getDate(),"일<br>");
+  // d.setTime(1994*1000*3600*22*366);
+  d.setTime(1900*1000*3600*24*366);
+  document.write(d.getYear(),"년 ",(d.getMonth()+1),"월 ",d.getDate(),"일<br>");
+</script>
+</body></html>
+<!--
+각자 학번,이름,생년월일을 출력하고, 이로부터 10,000일이 지난 해와
+달, 일, 요일을 아래와 같이 한글로 출력하라(프로그램 소스, 실행 화면 보임).
+
+학번: 2010301000
+이름: o o o
+생일:  oooo년 o월 o일 o요일
+10,000일 후: oooo년 o월 o일 o요일 -->

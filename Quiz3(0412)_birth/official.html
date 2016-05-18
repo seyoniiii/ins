@@ -1,0 +1,32 @@
+<html><head><title>Date</title></head>
+<body><h3>Date Set Test</h3>
+
+  <table border =1>
+    <tbody bgcolor = gold>
+  <tr><td>2012301058</td><td>이세연</td></tr>
+</tbody></table><br>
+
+<script language="JavaScript">
+
+wkday=new Array("일","월","화","수","목","금","토");
+bday = new Date("1994/10/26");
+byear=bday.getYear();
+
+if(byear<1900) byear+=1900;
+document.write("생일:", byear, "년", bday.getMonth()+1, "월");
+document.write(bday.getDate(),"일");
+document.write(wkday[bday.getDay()], "요일<br>");
+
+t=bday.getTime();
+bday.setTime(t+1000*3600*24*10000);
+
+
+byyear=bday.getYear();
+if(byyear<1900) byyear+=1900;
+document.write("10,000일 후:", byyear ,"년", bday.getMonth()+1, "월");
+document.write(bday.getDate()+"일");
+document.write(wkday[bday.getDay()], "요일<br>");
+
+
+</script>
+</body></html>

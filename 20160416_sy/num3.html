@@ -1,0 +1,40 @@
+<html><body>
+<h4>Test</h4>
+<script language="JavaScript">
+  var a = 20, b=30;
+  c = eval('0x'+(a+b));//0x50 = 16x5 = 80
+  // document.write("0xab: "+(0xab)+"<br>");
+  document.write("a="+a+", b="+b+", c="+c+"<br>");
+  document.write(""+1+c+"<br>");                  // 180
+
+  p="010";
+  q = parseInt(p); r = Number(p); s = eval(p);
+  document.write("p="+p+", q="+q+", r="+r+", s="+s+"<br>");
+
+  document.write('02'+2/4,"<br>");                // 020.5
+  document.write(Number('02'+2/4),"<br>");        // 20.5 그냥 막 붙이는거
+  document.write(Number(02+2/4),"<br>");          // 20.5 그냥 막 붙이는거
+  // document.write(eval('0x')+"<br>");           // 171
+  document.write(eval(0xa)+"<br>");               // 0xA = 10
+  document.write(eval('0x'+a)+"<br>");            // 32
+  document.write(eval(0xb)+"<br>");               // 0xB = 11
+  document.write(eval('0x'+b)+"<br>");            // 48
+  document.write(eval(0xab+2/4),"<br>");          // 171.5
+  document.write(parseInt(6/5),"<br>");           // 1
+  document.write(Number(true),"<br>");            // 1
+  document.write(Number(false),"<br>");           // 0
+  var x = "ABCDE";
+  x1 = x.charAt(1);
+  document.write(x1+"<br>");                      // B
+  x2 = x1.charCodeAt()-55;
+  document.write(x2+"<br>");                      // 11
+  document.write("<p>"+3+4+"<br>");               //34
+  document.write(1+2+"<br>");                     //3
+  document.write(''+1+2+" ",(3+4),' ',3+4,' ',5+6,"<br>");      //12 7 11
+
+  document.write(1+2+" "+3+4+" "+(3+4)+" "+5+6+"<br>");           //3 7 56
+
+
+
+</script>
+</body></html>

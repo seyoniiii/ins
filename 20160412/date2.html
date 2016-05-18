@@ -1,0 +1,17 @@
+<html><head><title>Date</title></head>
+<body>
+<h3>Object Array Date Test</h3>
+<script language="JavaScript">
+  wkday = new Array("일","월","화","수","목","금","토");
+  today = new Date();
+  tdate = today.getDate();
+  ty=today.getYear();
+  if(ty<1900) ty += 1900;
+  document.write("오늘은 ",ty,"년 ",today.getMonth()+1,"월 ");
+  document.write(tdate+"일 ");
+  document.write(wkday[today.getDay()],"요일입니다");
+  document.write("<br> 지금 시각은 ",today.getHours(),"시 ",
+    today.getMinutes(),"분 ",today.getSeconds(),"초입니다");
+</script>
+</body>
+</html>

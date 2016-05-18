@@ -1,0 +1,44 @@
+//오늘 날짜로부터 + 입력받은 숫자일의 월 일 요일 출력
+<html><head><title>Date</title></head>
+<body><h3>Date Set Test</h3>
+<script language="JavaScript">
+function date() {
+
+  wkday=new Array("일","월","화","수","목","금","토");
+  today = new Date(); //오늘 선언
+  tyo = wkday[today.getDay()]; //오늘 요일
+  tdate = today.getDate(); // 오늘 17일
+  tmonth = today.getMonth()+1; //오늘 몇월 4월
+  ty=today.getYear(); // 오늘 년도 2016년
+  if(ty<1900) ty += 1900;
+  document.getElementById("tyo").innerHTML ="<b><font color=red>"+tyo; //일요일
+  document.getElementById("tmonth").innerHTML ="<b><font color=red>"+tmonth; // 4월
+  document.getElementById("tdate").innerHTML ="<b><font color=red>"+tdate; // 17일
+
+  input = document.nform.a.value; //입력받은 숫자
+  document.getElementById("input").innerHTML ="<b><font color=red>"+input; // input출력
+<!-- -->
+  after = new Date(); // 이후 선언
+  today=today.getTime();
+  after.setTime(today+1000*3600*24*input); //이후는 오늘 + input일
+
+  afteryo = wkday[after.getDay()]; //요일
+  afteryear=after.getYear(); // 2016년
+  afterdate = after.getDate(); // 오늘 17일
+  aftermonth = after.getMonth()+1; //오늘 몇월 4월
+
+  if(afteryear<1900) afteryear += 1900;
+  document.getElementById("afteryo").innerHTML ="<b><font color=red>"+afteryo; //이후 요일
+  document.getElementById("aftermonth").innerHTML ="<b><font color=red>"+aftermonth; //이후 월
+  document.getElementById("afterdate").innerHTML ="<b><font color=red>"+afterdate; //이후 일
+}
+</script>
+<form name = "nform">
+  입력 : <input type="text" name="a" value="1000">
+  <input type ="button" onClick="date()" value="count"><br>
+  오늘은 <span id ="tyo">^</span>요일 이고
+  <span id = "tmonth">^</span>월 <span id = "tdate">^</span>일입니다.<br>
+  <span id="input">input</span>일 후는 <span id = "afteryo">^</span>요일 이고
+  <span id = "aftermonth">^</span>월 <span id = "afterdate">^</span>일입니다.<br>
+</form>
+</body></html>

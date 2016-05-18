@@ -1,0 +1,25 @@
+<html><body>
+<h3>Conversion Decimal to Hex</h3>
+<script language="JavaScript">
+  function Hex(x,base) {
+    hex = Array("0","1","2","3","4","5","6",
+                "7","8","9","A","B","C","D",
+                "E","F","G","H","I","J","K",
+                "L","M","N","O","P","Q","R",
+                "S","T","U","V","W","X","Y","Z"); //0~35
+    hxv = "";
+    out = x.toString(base); //자동 변환기
+    document.write("<b>",x,"</b> in base of "+base+" : <b>"+out);
+
+    while (x > 0) {
+      x1 = x % base; //32760 % 16 = 8
+      hxv = hex[x1] + hxv; // 8 ,
+      x = parseInt(x / base);
+      }
+    document.write(", "+hxv+"</b><br>");
+  }
+
+  base = prompt("Type base value!",16);//창띄우기
+  Hex(32760, base);
+</script>
+</body></html>

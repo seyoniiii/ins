@@ -1,0 +1,33 @@
+<html><body>
+<h3>Conversion Decimal to Hex</h3>
+<script language="JavaScript">
+  function Hex() {
+    hex = Array("0","1","2","3","4","5","6","7",
+       "8","9","A","B","C","D","E","F");
+
+    x=document.conv.num.value;
+    len = x.length;
+    sum = 0;
+    r=1;
+
+    while (len>0) {
+      len--;
+      for (var i = 0; i < 16; i++) {
+        if (x.charAt(len)==hex[i])
+          break;
+        }
+          sum +=i*r;
+          r=r<<4;
+    }
+    document.conv.out.value = sum;
+  }
+
+</script>
+<form name="conv">
+  Student Number : 2012301058<br>
+  Student Name : Lee Se Yeon<br><br><br>
+  Number: <input type=text name="num" value=12>
+  <input type="button" onClick="Hex()" value="----Convert--->">
+  10BASE : <input type=text name="out">
+</form>
+</body></html>

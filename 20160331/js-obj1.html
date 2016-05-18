@@ -1,0 +1,21 @@
+<html><head><title>UserObject</title>
+<script language="JavaScript">
+//객체생성
+  function student(identity, name, department){
+    this.id = identity;
+    this.name = name;
+    this.dept = department;
+
+    this.stInfo = function() {
+      return "�л� ���� : �̸��� "+this.name+", �а��� "+this.dept;
+    };
+  }
+  st = new student("2013301000", "������", "��ǻ�Ͱ��а�");
+</script>
+</head>
+<body> <h3>User Object 1</h3>
+  <script type="text/javascript">
+     document.writeln("�й�: " + st.id + "<br>");
+     document.writeln(st.stInfo() + "<br>");
+  </script>
+</body></html>

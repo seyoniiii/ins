@@ -1,0 +1,19 @@
+<html><head><title>scope</title></head>
+<body>
+  <h3>JavaScript: Variables Scope</h3>
+  <script language="JavaScript">
+     a=2; // global
+     b = 7;   // global
+     c=1;
+    function add() {
+     var a=4;  // local
+      var b= 7;
+       var c = 6;    // global
+      // document.write("f.add: a+b+c="+(a+b+c)+"<br>");
+    document.write("main: a+b+c="+(a+b+c)+"<br>");
+  }
+  add();
+  document.write("last: a+b+c="+(a+b+c)+"<br>");
+  </script>
+</body>
+</html>

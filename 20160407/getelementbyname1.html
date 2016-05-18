@@ -1,0 +1,29 @@
+<html><body>
+
+Cats:<input name="animal" type="checkbox" value="Cats">
+Dogs:<input name="animal" type="checkbox" value="Dogs">
+Flowers:<input name="vegetable" type="radio" value="Tulip">
+Fruits:<input name="vegetable" type="radio" value="Apple">
+Pear:<input name="vegetable" type="radio" value="Pear">
+Persimomn:<input name="vegetable" type="checkbox" value="Persimmon">
+
+
+<p>Click the button to find out how many elements there are in the document that have a name attribute with the value "animal".</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo1">DEMO 1</p>
+<div id="demo2">DEMO 2</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementsByName("animal").length;
+  document.getElementById("demo1").innerHTML = x;
+  a = document.getElementsByName("vegetable");
+  var b=a.length, c=b+": ";
+  for(i=0; i<b; i++) c += a[i].value + ", ";
+  document.getElementById("demo2").innerHTML = c;
+}
+</script>
+
+</body></html>

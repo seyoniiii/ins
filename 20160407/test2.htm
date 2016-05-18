@@ -1,0 +1,27 @@
+<html><head>
+<title>Hexa Code Conversion</title>
+ <script language="JavaScript">
+   function Dec() {
+     hex = Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F")
+     x = document.conv.xv.value;
+     for(i=0; i<hex.length; i++) if(hex[i]==x.charAt(0)) break;
+     res = i*16;
+     for(i=0; i<hex.length; i++) if(hex[i]==x.charAt(1)) break;
+     res += i;
+
+     xx = 16*(x.charCodeAt(0)-55) + (x.charCodeAt(1)-55);
+  document.getElementById("ans").innerHTML =
+    "<b><font color=red>"+res+","+xx+"</font></b>";
+   }
+</script>
+</head>
+<body>
+  <h4>Hexa Code Conversion</h4>
+  <form name="conv">
+     Type a number(Hexa):
+     <input type="text" name="xv" value="AB" size=8>
+  </form>
+  <button value="answer" onClick="Dec()">Click</button>
+  <br>Decimal: <span id="ans">Answer in Decimal</span>
+</body>
+</html>
